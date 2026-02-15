@@ -45,6 +45,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3452665186406442"
+          crossOrigin="anonymous"
+          suppressHydrationWarning
+        />
+      </head>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} antialiased min-h-screen flex flex-col`}
       >
