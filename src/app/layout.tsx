@@ -24,8 +24,6 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: 'swap',
 });
 
-const GOOGLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
-
 export const metadata: Metadata = {
   title: {
     default: `${SITE_NAME} — Fridge, Freezer & Pantry Times`,
@@ -37,9 +35,9 @@ export const metadata: Metadata = {
   openGraph: { type: 'website', siteName: SITE_NAME, locale: 'en_US' },
   twitter: { card: 'summary_large_image' },
   alternates: { canonical: '/' },
-  ...(GOOGLE_VERIFICATION && {
-    verification: { google: GOOGLE_VERIFICATION },
-  }),
+  verification: {
+    google: 'google27900233ff0bc69b.html',
+  },
 };
 
 export default function RootLayout({

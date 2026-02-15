@@ -69,8 +69,6 @@ Edit `data/foods.json`. Each food needs:
 
 Push to GitHub, import in Vercel, deploy.
 
-## Google Search Console Verification
+## Google Search Console
 
-**HTML file method:** Add `GOOGLE_VERIFICATION_ID` to Vercel env vars. Use the code from your filename — if Google gives you `google1a2b3c4d5e6f.html`, set `GOOGLE_VERIFICATION_ID=1a2b3c4d5e6f`. The file will be served at `yoursite.com/google1a2b3c4d5e6f.html`.
-
-**Meta tag method:** Add `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` with your verification code. In Search Console, choose "HTML tag" and copy the `content` value.
+Verification via `metadata.verification.google` in layout and `public/google27900233ff0bc69b.html`.
