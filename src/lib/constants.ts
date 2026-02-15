@@ -1,6 +1,14 @@
 export const SITE_NAME = 'Food Storage Guide';
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
+const getSiteUrl = () => {
+  const url =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.NEXT_PUBLIC_SITE_URL || 'https://food-storage-guide-two.vercel.app';
+  return url.replace(/\/$/, '');
+};
+
+export const SITE_URL = getSiteUrl();
 export const SITE_DESCRIPTION =
   "Stop guessing — how long does chicken last? Can you freeze milk? Fridge, freezer & pantry times for 174 foods. Your fridge's best friend.";
 
