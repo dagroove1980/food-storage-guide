@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { SITE_NAME, SITE_URL } from '@/lib/constants';
+import { SITE_NAME } from '@/lib/constants';
+import { Heart } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -24,8 +25,12 @@ export function Footer() {
             </Link>
           </nav>
         </div>
-        <p className="mt-4 text-xs text-[var(--color-secondary)] text-center sm:text-left">
-          Storage times are guidelines. When in doubt, throw it out. Refrigerate at 40°F or below.
+        <p className="mt-4 text-xs text-[var(--color-secondary)] text-center sm:text-left flex items-center gap-1 flex-wrap">
+          <span>Storage times are guidelines. Refrigerate at 40°F or below.</span>
+          <span className="hidden sm:inline">·</span>
+          <span className="flex items-center gap-1">
+            Made with <Heart size={12} className="text-[var(--color-accent)] fill-[var(--color-accent)]" /> for less food waste
+          </span>
         </p>
       </div>
     </footer>

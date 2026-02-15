@@ -26,10 +26,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} — How Long Does It Keep?`,
+    default: `${SITE_NAME} — Fridge, Freezer & Pantry Times`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  keywords: ['food storage', 'how long does chicken last', 'can you freeze milk', 'leftover storage', 'fridge storage', 'freezer storage'],
   metadataBase: new URL(SITE_URL),
   openGraph: { type: 'website', siteName: SITE_NAME, locale: 'en_US' },
   twitter: { card: 'summary_large_image' },

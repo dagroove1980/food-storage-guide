@@ -2,7 +2,7 @@ export const SITE_NAME = 'Food Storage Guide';
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 export const SITE_DESCRIPTION =
-  'How long does it keep? Fridge, freezer, pantry storage times for 250+ foods. Signs of spoilage, thawing tips, and safe storage methods.';
+  "Stop guessing — how long does chicken last? Can you freeze milk? Fridge, freezer & pantry times for 174 foods. Your fridge's best friend.";
 
 export const CATEGORIES = [
   { id: 'meat', name: 'Meat', slug: 'meat' },

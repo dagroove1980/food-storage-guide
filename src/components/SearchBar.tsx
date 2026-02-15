@@ -90,7 +90,7 @@ export function SearchBar() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => results.length > 0 && setIsOpen(true)}
           onBlur={() => setTimeout(() => setIsOpen(false), 200)}
-          placeholder="How long does chicken last? Can you freeze milk?"
+          placeholder="Try: chicken, milk, avocado..."
           aria-label="Search foods"
           aria-expanded={isOpen}
           aria-autocomplete="list"

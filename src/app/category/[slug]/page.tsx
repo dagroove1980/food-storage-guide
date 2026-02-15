@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllFoods, getFoodsByCategory } from '@/lib/data';
+import { getFoodsByCategory } from '@/lib/data';
 import { FoodGrid } from '@/components/FoodGrid';
 import { CATEGORIES } from '@/lib/constants';
+import { CATEGORY_ICONS } from '@/lib/icons';
 import { collectionStructuredData, breadcrumbStructuredData } from '@/lib/seo';
 import { SITE_URL } from '@/lib/constants';
 
@@ -21,8 +22,8 @@ const categoryNames: Record<string, string> = Object.fromEntries(
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const name = categoryNames[slug] || slug;
-  const title = `${name} — Storage Times`;
-  const description = `How long does ${name.toLowerCase()} last? Fridge, freezer, and pantry storage times.`;
+  const title = `${name} — Fridge, Freezer & Pantry Storage Times`;
+  const description = `How long does ${name.toLowerCase()} last? Storage times, spoilage signs, and thawing tips for ${name.toLowerCase()}.`;
 
   return {
     title,
@@ -36,6 +37,7 @@ export default async function CategoryPage({ params }: Props) {
   const categoryId = CATEGORIES.find((c) => c.slug === slug)?.id ?? slug;
   const foods = getFoodsByCategory(categoryId);
   const name = categoryNames[slug] || categoryId;
+  const Icon = CATEGORY_ICONS[slug];
 
   const structured = collectionStructuredData(
     `${name} Storage Guide`,
@@ -62,12 +64,21 @@ export default async function CategoryPage({ params }: Props) {
         {' / '}
         <span className="text-[var(--color-foreground)]">{name}</span>
       </nav>
-      <h1 className="font-heading text-3xl font-bold text-[var(--color-foreground)] mb-2">
-        {name} Storage Guide
-      </h1>
-      <p className="text-[var(--color-secondary)] mb-8">
-        How long does {name.toLowerCase()} last in the fridge, freezer, or pantry? {foods.length} foods.
-      </p>
+      <div className="flex items-start gap-4 mb-6">
+        {Icon && (
+          <div className="shrink-0 w-14 h-14 rounded-2xl bg-[var(--color-accent)]/15 flex items-center justify-center text-[var(--color-accent)]">
+            <Icon size={28} strokeWidth={2} />
+          </div>
+        )}
+        <div>
+          <h1 className="font-heading text-3xl font-bold text-[var(--color-foreground)]">
+            {name} Storage Guide
+          </h1>
+          <p className="mt-2 text-[var(--color-secondary)]">
+            How long does {name.toLowerCase()} last in the fridge, freezer, or pantry? Storage times for {foods.length} foods — plus how to store, signs of spoilage, and when to toss.
+          </p>
+        </div>
+      </div>
       <FoodGrid foods={foods} />
     </div>
   );
