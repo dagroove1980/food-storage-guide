@@ -11,7 +11,7 @@ export function Footer() {
             href="/"
             className="font-heading font-semibold text-[var(--color-foreground)]"
           >
-            {SITE_NAME}
+            <span>FoodStorage</span><span className="text-[var(--color-accent)]">Guide</span>
           </Link>
           <nav className="flex gap-6 text-sm text-[var(--color-secondary)]">
             <Link href="/categories" className="hover:text-[var(--color-accent)] transition-colors">

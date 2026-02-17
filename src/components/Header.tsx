@@ -13,7 +13,7 @@ export function Header() {
             className="flex items-center gap-2 font-heading text-xl font-bold text-[var(--color-foreground)] hover:text-[var(--color-accent)] transition-colors"
           >
             <UtensilsCrossed size={24} className="text-[var(--color-accent)]" />
-            {SITE_NAME}
+            <span>FoodStorage</span><span className="text-[var(--color-accent)]">Guide</span>
           </Link>
           <div className="w-full sm:w-80 lg:w-96">
             <SearchBar />
